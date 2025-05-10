@@ -165,10 +165,6 @@
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 }
 
-.carousel-item img {
-  height: 500px;
-  border-radius: 20px;
-}
 main {
   margin: 20px;
 }
@@ -224,117 +220,54 @@ footer {
 }
 
 /* Media queries para responsividad */
+/* Ajustes para secciones de contenido */
 @media (max-width: 992px) {
-  /* Tablet */
-  .tarjetas img {
-    width: 45px;
-    margin: 10px;
-  }
-  
-  .contenedor1 {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .containerInfo {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Móviles grandes */
-  .navbar-brand img {
-    width: 120px;
-    height: auto;
-  }
-  
-  .tarjetas {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 10px;
-    padding: 8px;
-  }
-  
-  .tarjetas img {
-    width: 40px;
-    margin: 8px;
-  }
-  
-  .tarjetas img:hover {
-    flex: none;
-    transform: scale(1.1);
-  }
-  
-  .carousel-item img {
-    height: 250px;
-  }
-  
-  .contenedor1 {
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  .contenedor1 img {
-    width: 250px !important;
-    margin: 15px auto !important;
-  }
-  
-  .costos {
-    margin: 10px;
-    font-size: 16px;
-  }
-  
-  .costos span {
-    font-size: 20px;
-  }
-  
-  .containerInfo {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .beneficios, .promociones {
-    margin: 15px 0;
-    width: 100%;
-  }
-  
-  .beneficios h4, .promociones h4 {
-    font-size: 28px;
-  }
-  
-  .beneficios ul li span, .promociones ul li span {
-    font-size: 18px;
-  }
-  
-  .containerInfo img {
-    margin: 10px 0 !important;
-    width: 100px !important;
-    height: auto !important;
-  }
+    .contenedor1 {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    #teleton img, #joy img, #clasica img, 
+    #oro img, #descubre img, #platinum img, #explora img {
+        width: 250px;
+        margin: 20px auto;
+    }
+    
+    .containerInfo {
+        flex-direction: column;
+    }
+    
+    .beneficios, .promociones {
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .beneficios h4, .promociones h4 {
+        font-size: 28px;
+    }
+    
+    .costos {
+        margin: 15px;
+        font-size: 16px;
+    }
+    
+    .costos span {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 576px) {
-  /* Móviles pequeños */
-  .carousel-item img {
-    height: 180px;
-  }
-  
-  .contenedor1 img {
-    width: 200px !important;
-  }
-  
-  .beneficios h4, .promociones h4 {
-    font-size: 24px;
-  }
-  
-  .beneficios ul li span, .promociones ul li span {
-    font-size: 16px;
-  }
-  
-  .tarjetas img {
-    width: 35px;
-    margin: 6px;
-  }
+    .contenedor1 img {
+        width: 200px !important;
+    }
+    
+    .beneficios h4, .promociones h4 {
+        font-size: 24px;
+    }
+    
+    .beneficios ul li span, .promociones ul li span {
+        font-size: 16px;
+    }
 }
 /* Añade al CSS */
 .tarjetas img.touched {
@@ -363,4 +296,60 @@ footer {
     text-align: center;
     margin-top: auto; /* Empuja el footer hacia abajo */
     width: 100%;
+}
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+    color: #003366;
+}
+
+/* Responsividad para la navbar */
+@media (max-width: 992px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 4%;
+    }
+    
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+    
+    .logo {
+        order: 2;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+body {
+    padding-top: 70px; /* Ajusta este valor según la altura de tu navbar */
 }
