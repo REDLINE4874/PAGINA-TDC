@@ -1,6 +1,17 @@
+// Menú hamburguesa
 document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('[data-target]');
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    document.querySelector('.navbar').prepend(menuToggle);
     
+    menuToggle.addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+    
+    // Tu código existente para las secciones...
+    const links = document.querySelectorAll('[data-target]');
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -8,20 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
-                // Oculta todas las secciones
                 document.querySelectorAll('.seccion').forEach(section => {
                     section.classList.remove('activa');
                 });
-                
-                // Muestra la sección objetivo
                 targetSection.classList.add('activa');
                 
-                // Desplazamiento suave opcional
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                // Cierra el menú en móviles después de seleccionar
+                if (window.innerWidth <= 992) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
             }
         });
     });
-    
-    // Mostrar la primera sección al cargar la página (opcional)
-    document.querySelector('.seccion')?.classList.add('activa');
 });
