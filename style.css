@@ -454,7 +454,7 @@ body {
 
 
 /* Controles */
-.carousel-control {
+/* .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -482,7 +482,7 @@ body {
 
 .next {
   right: 20px;
-}
+} */
 
 /* Indicadores */
 .indicators {
