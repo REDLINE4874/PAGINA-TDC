@@ -1,424 +1,369 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- conexion bootstrap -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- conexion bootstrap -->
+    <!-- conexion con archivos js,css -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="java.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- conexion con archivos js,css -->
-  <link rel="stylesheet" href="style.css" />
-  <script src="java.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
+    <title>Mi Pagina Web</title>
+  </head>
 
-  <title>Mi Pagina Web</title>
-</head>
-
-<body>
-  <!-- barra de navegacion con bootstrap -->
-  <nav class="navbar">
-    <div class="logo">
-      <img data-target="inicio" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_de_Banamex.svg"
-        alt="Banamex">
-    </div>
-    <ul class="nav-links">
-      <li><a href="https://www.banamex.com/es/localizador-sucursales.html" target="_blank"
-          class="nav-link">Sucursales</a></li>
-      <li><a href="https://www.gob.mx/curp/" target="_blank" class="nav-link">Curp</a></li>
-      <li class="dropdown">
-        <a href="#" class="nav-link">Productos <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="#" data-target="joy">Joy</a>
-          <a href="#" data-target="teleton">Teleton</a>
-          <a href="#" data-target="clasica">Clasica</a>
-          <a href="#" data-target="oro">Oro</a>
-          <a href="#" data-target="descubre">Descubre</a>
-          <a href="#" data-target="platinum">Platinum</a>
-          <a href="#" data-target="explora">Explora</a>
-        </div>
-      </li>
-    </ul>
-
-  </nav>
-
-  <main>
-
-    <!-- PAGINA PRINCIPAL  -->
-    <section id="inicio" class="seccion activa">
-
-
-
-
-    </section>
-
-    <!-- Secciones de la pagina  -->
-    <!-- TELETON  -->
-    <section id="teleton" class="seccion">
-      <div class="contenedor1">
-        <a href="">
-          <img
-            src="https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-teleton/img/teleton/desktop/Card_Hero.png"
-            alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>63.43%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$540 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>90.2%</p>
-        </div>
+  <body>
+    <!-- barra de navegacion con bootstrap -->
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          data-target="inicio"
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_de_Banamex.svg"
+          alt="Banamex"
+        />
       </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>Apoyo a programas de Teletón.</span>
-            </li>
-            <li>
-              <span>Acceso a descuentos exclusivos.</span>
-            </li>
-            <li>
-              <span>Programa de recompensas.</span>
-            </li>
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>6 meses sin interéses en compras mayores a $3,000.</span>
-            </li>
-            <li>
-              <span>Descuento del 20% en tiendas participantes.</span>
-            </li>
-          </ul>
-        </div>
+      <ul class="nav-links">
+        <li>
+          <a
+            href="https://www.banamex.com/es/localizador-sucursales.html"
+            target="_blank"
+            class="nav-link"
+            >Sucursales</a
+          >
+        </li>
+        <li>
+          <a href="https://www.gob.mx/curp/" target="_blank" class="nav-link"
+            >Curp</a
+          >
+        </li>
+        <li class="dropdown">
+          <a href="#" class="nav-link"
+            >Productos <i class="fas fa-chevron-down"></i
+          ></a>
+          <div class="dropdown-content">
+            <a href="#" data-target="joy">Joy</a>
+            <a href="#" data-target="teleton">Teleton</a>
+            <a href="#" data-target="clasica">Clasica</a>
+            <a href="#" data-target="oro">Oro</a>
+            <a href="#" data-target="descubre">Descubre</a>
+            <a href="#" data-target="platinum">Platinum</a>
+            <a href="#" data-target="explora">Explora</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- PAGINA PRINCIPAL  -->
+      <section id="inicio" class="seccion activa"></section>
+
+      <!-- Secciones de la pagina  -->
+      <!-- TELETON  -->
+      <section id="teleton" class="seccion">
+        <section style="background-color: rgb(121, 0, 121)" class="contenedor">
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-teleton/img/teleton/desktop/Card_Hero.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones">
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- JOY  -->
+
+      <section id="joy" class="seccion">
+        <section
+          style="background-color: rgba(0, 138, 192, 0.966)"
+          class="contenedor"
+        >
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/es/personas/tarjetas-credito/assets/img/desktop/Simplicity.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones">
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- CLASICA  -->
+      <section id="clasica" class="seccion">
+        <section
+          style="background-color: rgba(190, 2, 34, 0.897)"
+          class="contenedor"
+        >
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-clasica-citibanamex.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones" >
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <!-- ORO  -->
+      <section id="oro" class="seccion">
+        <section style="background-color: rgb(180, 148, 69)" class="contenedor">
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-oro-citibanamex.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones" >
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <!-- DESCUBRE  -->
+      <section id="descubre" class="seccion">
+        <section style="background-color: #006273" class="contenedor">
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-rewards/assets/img/desktop/rewards_card.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones">
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <!-- PLATINUM  -->
+      <section id="platinum" class="seccion">
+        <section style="background-color: silver" class="contenedor">
+          <div class="card">
+            <a href="">
+              <img
+                src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-platinum-citibanamex.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones">
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <!-- PREMIER  -->
+       <section id="explora" class="seccion">
+        <section style="background-color: rgb(129, 129, 129)" class="contenedor">
+          <div class="card">
+            <a href="">
+              <img
+              src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-premier-citibanamex.png"
+              alt=""
+            />
+            </a>
+          </div>
+        </section>
+
+          <section class="beneficios">
+          <div class="beneficios-card">
+            <h3>titulo del beneficio</h3>
+            <p>descripcion del beneficio</p>
+          </div>
+          <div class="beneficios-card">
+            <h3>titulo</h3>
+            <p>descripcion</p>
+          </div>
+        </section>
+
+        <section class="promociones">
+          <div class="promo-card">
+            <h3>Promociones</h3>
+          </div>
+          <div class="promo-card">
+            <ul>
+              <li>
+                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+              </li>
+              <li>
+                <span>Descuento del 20% en tiendas participantes.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- Inicio del footer -->
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
       </div>
-    </section>
-    <!-- SIMPLICITY  -->
-    <section id="joy" class="seccion">
-      <div class="contenedor1" style="background-color: rgba(0, 138, 192, 0.966)">
-        <a href="">
-          <img src="https://www.banamex.com/es/personas/tarjetas-credito/assets/img/desktop/Simplicity.png" alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>62.93%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>Sin anualidad</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>84.7% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://www.banamex.com/assets/globals/img/ilustrations/day-calendar.svg" alt=""
-          style="width: 150px;margin: 0px;height: 150px;" />
-        <div class="beneficios">
-          <h4>Elige tu fecha de pago</h4>
-          <ul>
-            <li>
-              <span>Cambia la fecha de corte de tu tarjeta una vez al año.</span>
-            </li>
-
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>Meses sin interéses en en tiendas participantes</span>
-            </li>
-            <li>
-              <span>Acceso al servicio libra one</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- CLASICA  -->
-    <section id="clasica" class="seccion">
-      <div class="contenedor1" style="background-color: rgba(255, 0, 0, 0.666)">
-        <a href="">
-          <img src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-clasica-citibanamex.png" alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>63.42%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$815 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>91.5% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>obtén el 5% de puntos premia en todas tus compras</span>
-            </li>
-            <li>
-              <span>Disfruta de de los momentos clásicos con tu tarjeta</span>
-            </li>
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>Hasta 12 pagos fijos en Salud y belleza</span>
-            </li>
-            <li>
-              <span>Descuento del 20% en tiendas participantes.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- ORO  -->
-    <section id="oro" class="seccion">
-      <div class="contenedor1" style="background-color: rgb(180, 148, 69)">
-        <a href="">
-          <img src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-oro-citibanamex.png" alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>61.42%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$1,230 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>88.3% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>obtén hasta el 7% de puntos premia en todas tus compras.</span>
-            </li>
-            <li>
-              <span>Disfruta de momentos Oro para obténer experiencias únicas.</span>
-            </li>
-
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>6 meses sin interéses en viajes salud y belleza</span>
-            </li>
-            <li>
-              <span>Protección de compra mastercard.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- REWARDS  -->
-    <section id="descubre" class="seccion">
-      <div class="contenedor1" style="background-color: #006273">
-        <a href="">
-          <img
-            src="https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-rewards/assets/img/desktop/rewards_card.png"
-            alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>61.42%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$1,230 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>87.8% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>obtén 1 momento BANAMEX por cada dolar gastado.</span>
-            </li>
-            <li>
-              <span>Cambia tus puntos por premios de viajes, productos de lujo.</span>
-            </li>
-
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>Meses sin interéses en tu primer compra.</span>
-            </li>
-            <li>
-              <span>obtén un vuelo gratis a playas de Cancún.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- PLATINUM  -->
-    <section id="platinum" class="seccion">
-      <div class="contenedor1" style="background-color: SILVER">
-        <a href="">
-          <img src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-platinum-citibanamex.png" alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>36.42%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$2,725 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>43.3% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>obtén 10% de puntos premia por cada compra.</span>
-            </li>
-            <li>
-              <span>obtén el doble de puntos premia en compras en tiendas de conveniencia.</span>
-            </li>
-
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>2 accesos a salas VIP en aeropuertos.</span>
-            </li>
-            <li>
-              <span>Servicio de asistecia vial, legal y del hogar 24/07.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- PREMIER  -->
-    <section id="explora" class="seccion">
-      <div class="contenedor1" style="background-color: rgb(129, 129, 129)">
-        <a href="">
-          <img src="https://www.banamex.com/assets/img/tarjetas/tarjeta-de-credito-premier-citibanamex.png" alt="" />
-        </a>
-
-        <div class="costos">
-          <span>interés</span>
-          <p>60.43%</p>
-        </div>
-
-        <div class="costos">
-          <span>Anualidad</span>
-          <p>$2,725 Sin IVA</p>
-        </div>
-
-        <div class="costos">
-          <span>Cat Promedio</span>
-          <p>85.4% Sin IVA</p>
-        </div>
-      </div>
-      <div class="containerInfo">
-        <img src="https://cdn-icons-png.flaticon.com/512/11443/11443702.png" alt="" style="width: 150px" />
-        <div class="beneficios">
-          <h4>Beneficios</h4>
-          <ul>
-            <li>
-              <span>obtén 1.5 punto por cada dolar gastado en compras con tu tarjeta.</span>
-            </li>
-            <li>
-              <span>Acceso a salas VIP en aeropuertos.</span>
-            </li>
-
-          </ul>
-        </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1376/1376343.png" alt="" style="width: 150px" />
-        <div class="promociones">
-          <h4>Promociones</h4>
-          <ul>
-            <li>
-              <span>MASTER SEGURO DE VIAJES</span>
-            </li>
-            <li>
-              <span>Descuento en la renta de vehiculos en el extranjero.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- Inicio del footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
-
-    </div>
-  </footer>
-  <!-- Fin del footer -->
-</body>
-
+    </footer>
+    <!-- Fin del footer -->
+  </body>
 </html>

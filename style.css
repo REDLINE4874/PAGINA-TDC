@@ -132,78 +132,173 @@
 }
 
 
-.contenedor1 {
-  padding: 30px;
-  background-color: rgba(136, 40, 204, 0.772);
-  border-radius: 0 0 10px 10px;
-  align-items: center;
+/* Contenedor principal */
+ .contenedor {
   display: flex;
-}
-.costos {
-  color: white;
-  margin: 25px 25px 25px 25px;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-}
-.costos span {
-  font-size: 30px;
-  block-size: auto;
+  justify-content:space-between;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 }
 
-/* Imágenes de tarjetas */
-#teleton img,
-#joy img,
-#clasica img,
-#oro img,
-#descubre img,
-#platinum img,
-#explora img {
-  width: 350px;
-  margin: 50px;
-  border-radius: 20px;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+/* Estilos para la tarjeta */
+ .card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+    padding: 3rem; 
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
+
+ .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+ .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+/* Sección de beneficios */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+ .beneficios-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #000000;
+}
+
+ .beneficios-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+ .beneficios-card h3 {
+  color: #0085a7;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+ .beneficios-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Sección de promociones */
+ .promociones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  background: linear-gradient(135deg, #0000006c 0%, #000000e3 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+ .promo-card {
+  padding: 2rem;
+}
+
+ .promo-card:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+ .promo-card h3 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+ .promo-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ .promo-card li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+ .promo-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: gold;
+  font-weight: bold;
+}
+
+ .promo-card li span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+   .beneficios, 
+   .promociones {
+    grid-template-columns: 1fr;
+  }
+  
+   .promo-card:first-child {
+    padding: 1.5rem;
+  }
+  
+   .promo-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Efectos especiales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ .beneficios-card,
+ .promociones {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+ .beneficios-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+ .promociones {
+  animation-delay: 0.4s;
+}
+
+
 
 main {
   margin: 20px;
 }
 
 /* Beneficios y promociones */
-.beneficios,
-.promociones {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 20px;
-  margin-top: 50px;
-  margin: 20px;
-}
 
-.beneficios h4,
-.promociones h4 {
-  font-size: 40px;
-  color: #004080;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-
-.beneficios ul li,
-.promociones ul li {
-  margin: 0;
-  padding: 0;
-}
-
-.beneficios ul li span,
-.promociones ul li span {
-  margin: 10px 0;
-  color: #555;
-  font-size: 25px;
-}
-
-.containerInfo {
-  width: auto;
-  display: flex;
-}
 
 /* Footer */
 footer {
@@ -220,41 +315,7 @@ footer {
 }
 
 /* Media queries para responsividad */
-/* Ajustes para secciones de contenido */
-@media (max-width: 992px) {
-    .contenedor1 {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    #teleton img, #joy img, #clasica img, 
-    #oro img, #descubre img, #platinum img, #explora img {
-        width: 250px;
-        margin: 20px auto;
-    }
-    
-    .containerInfo {
-        flex-direction: column;
-    }
-    
-    .beneficios, .promociones {
-        margin: 15px 0;
-        width: 100%;
-    }
-    
-    .beneficios h4, .promociones h4 {
-        font-size: 28px;
-    }
-    
-    .costos {
-        margin: 15px;
-        font-size: 16px;
-    }
-    
-    .costos span {
-        font-size: 22px;
-    }
-}
+
 
 @media (max-width: 576px) {
     .contenedor1 img {
@@ -353,3 +414,4 @@ footer {
 body {
     padding-top: 70px; /* Ajusta este valor según la altura de tu navbar */
 }
+
