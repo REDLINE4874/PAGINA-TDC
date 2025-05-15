@@ -564,3 +564,24 @@ body {
     bottom: 10px;
   }
 }
+.validas {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #000000; 
+}
+.validas img {
+  width: 565x;
+  height: 773px;
+  display: block;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+.validas h3 {
+  color: #0085a7;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
