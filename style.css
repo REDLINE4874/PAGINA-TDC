@@ -564,13 +564,20 @@ body {
     bottom: 10px;
   }
 }
+.tdc_aceptadas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
 .validas {
   background: white;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-left: 4px solid #000000; 
+  border-left: 4px solid #008791; 
+  
 }
 .validas img {
   width: 565x;
