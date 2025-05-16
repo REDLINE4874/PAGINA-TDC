@@ -135,7 +135,8 @@
 /* Contenedor principal */
  .contenedor {
   display: flex;
-  justify-content:space-between;
+  
+  flex-direction:row;
   margin-bottom: 3rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -143,7 +144,7 @@
 
 /* Estilos para la tarjeta */
  .card {
-  width: 100%;
+  width: 350px;
   max-width: 500px;
   border-radius: 15px;
   overflow: hidden;
@@ -167,15 +168,16 @@
 
 /* Sección de beneficios */
 .beneficios {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
+  margin-top: 1rem;
 }
 
  .beneficios-card {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
