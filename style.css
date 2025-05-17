@@ -251,6 +251,24 @@
     font-size: 1rem;
 }
 
+ .comparativa {
+    position: relative;
+    display: flex;
+    padding-bottom: 62.5%; /* Proporción 16:10 (800/500 = 1.6) */
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .comparativa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 500px;
+    border: none;
+  }
+
 /* Sección de promociones */
 .promociones {
     display: grid;
@@ -321,6 +339,11 @@
         flex-direction: column; /* Apila elementos en móviles */
     }
 }
+ @media (max-width: 480px) {
+    .comparativa {
+      padding-bottom: 75%; /* Puedes ajustar este valor según necesites */
+    }
+  }
 
 /* Efectos especiales */
 @keyframes fadeIn {
