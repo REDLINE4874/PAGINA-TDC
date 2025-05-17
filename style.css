@@ -146,10 +146,10 @@
 /* Contenedor principal */
  .contenedor {
   display: flex;
-  justify-content:space-between;
+  row-gap: 2rem;
   margin-bottom: 3rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
+  align-items: center;
+    border-radius: 10px;
 }
 
 /* Estilos para la tarjeta */
@@ -177,17 +177,18 @@
     
 }
 .costos {
-    border-radius: 10px;
+    /* border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border-left: 4px solid #000000;
-    background-color: white;
-    padding: 1rem;
+    background-color: white; */
+    padding: 4rem 4rem 4rem 0rem;
     margin-bottom: 2rem;
+    
     
 }
 .costos-linea {
-  display: flex;       /* Activa Flexbox */
+      /* Activa Flexbox */
   align-items: center; /* Alinea verticalmente */
   gap: 1rem;         /* Espacio entre elementos */
   margin-bottom: 0.5rem; /* Espacio entre líneas */
@@ -202,13 +203,13 @@
 
 /* Estilos opcionales para consistencia */
 .costos-linea h3 {
-  color: #0085a7;
+  color: #ffffff;
     font-size: 1.3rem;
     
 }
 
 .costos-linea p {
-  color: #555;
+  color: #ffffff;
     line-height: 1.6;
     font-size: 1.3rem;
 }
@@ -219,11 +220,12 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+ 
 }
 
  .beneficios-card {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -238,7 +240,7 @@
 .beneficios-card h3 {
     color: #0085a7;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    
     margin-top: 1rem;
     font-weight: 700;
 }
