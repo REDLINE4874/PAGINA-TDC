@@ -412,6 +412,290 @@
     font-size: 0.95rem;
   }
 }
+/* ESTILOS GENERALES */
+:root {
+  --primary-color: #4361ee;
+  --primary-dark: #3a0ca3;
+  --secondary-color: #4cc9f0;
+  --success-color: #2b9348;
+  --danger-color: #ef233c;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.calculadora {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.calculadora:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.calculadora h1 {
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.calculadora h1::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  margin: 0.8rem auto 0;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+/* VERSIÓN ESCRITORIO (TABLA) */
+/* Ocultar móvil en escritorio */
+.mobile-cards {
+  display: none;
+}
+
+/* VERSIÓN ESCRITORIO (TABLA) */
+#puntosTable {
+  display: table; /* Asegurar que es visible */
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1.8rem;
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#puntosTable thead {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+}
+
+#puntosTable th {
+  padding: 1.2rem 1.8rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+#puntosTable td {
+  padding: 1.4rem 1.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+}
+
+#puntosTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#puntosTable tbody tr {
+  transition: var(--transition);
+}
+
+#puntosTable tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: translateY(-2px);
+}
+
+/* Elementos del formulario */
+#tarjeta, #gasto {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #f9f9f9;
+}
+
+#tarjeta {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.1rem;
+  cursor: pointer;
+}
+
+#tarjeta:focus, #gasto:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  background-color: white;
+}
+
+#gasto::placeholder {
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* Celdas de resultados */
+#bonificacion {
+  font-weight: 700;
+  color: var(--danger-color);
+}
+
+#puntosObtenidos {
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+#equivalencia {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* VERSIÓN MÓVIL (TARJETAS) */
+@media (max-width: 768px) {
+  .calculadora {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 14px;
+  }
+  
+  #puntosTable {
+    display: none;
+  }
+  
+  .mobile-cards {
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  .card-row {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+  }
+  
+  .card-row:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .card-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+    flex: 1;
+  }
+  
+  .card-value {
+    font-weight: 500;
+    text-align: right;
+    flex: 1;
+  }
+  
+  /* Elementos del formulario en móvil */
+  .mobile-select, .mobile-input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f9f9f9;
+  }
+  
+  .mobile-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
+  .mobile-select:focus, .mobile-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+    background-color: white;
+  }
+  
+  /* Colores específicos para móvil */
+  .bonificacion-mobile {
+    color: var(--danger-color);
+    font-weight: 600;
+  }
+  
+  .puntos-mobile {
+    color: var(--success-color);
+    font-weight: 600;
+  }
+  
+  .equivalencia-mobile {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  /* Ajustes para el título en móvil */
+  .calculadora h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .calculadora h1::after {
+    width: 80px;
+    height: 4px;
+    margin: 0.6rem auto 0;
+  }
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.calculadora {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.card-row {
+  animation: fadeIn 0.4s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
 
 /* Footer */
 footer {

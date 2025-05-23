@@ -27,7 +27,6 @@
   </head>
 
   <body>
-   
     <!-- barra de navegacion NATIVA-->
     <nav class="navbar">
       <div class="logo">
@@ -246,30 +245,119 @@
         <div class="iframe-container">
           <div class="iframe-wrapper">
             <iframe
-            class="responsive-iframe"
-            src="https://miro.com/app/embed/uXjVI0K4HPA=/?pres=1&frameId=3458764628617260965&embedId=921318411253"
-            frameborder="0"
-            scrolling="no"
-            allow="fullscreen; clipboard-read; clipboard-write"
-            allowfullscreen
-          ></iframe>
-
+              class="responsive-iframe"
+              src="https://miro.com/app/embed/uXjVI0K4HPA=/?pres=1&frameId=3458764628617260965&embedId=921318411253"
+              frameborder="0"
+              scrolling="no"
+              allow="fullscreen; clipboard-read; clipboard-write"
+              allowfullscreen
+            ></iframe>
           </div>
-          
-           <div class="iframe-wrapper">
+
+          <div class="iframe-wrapper">
             <iframe
-            class="responsive-iframe"
-            src="https://miro.com/app/embed/uXjVIx_-IFU=/?pres=1&frameId=3458764629368394186&embedId=133024792237"
-            frameborder="0"
-            scrolling="no"
-            allow="fullscreen; clipboard-read; clipboard-write"
-            allowfullscreen
-          ></iframe>
-
-           </div>
-          
+              class="responsive-iframe"
+              src="https://miro.com/app/embed/uXjVIx_-IFU=/?pres=1&frameId=3458764629368394186&embedId=133024792237"
+              frameborder="0"
+              scrolling="no"
+              allow="fullscreen; clipboard-read; clipboard-write"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
+        <!-- calculadora puntos premia -->
+        <div class="calculadora">
+          <h1>Calculadora de Puntos de Tarjeta</h1>
+          <table id="puntosTable">
+            <thead>
+              <tr>
+                <th>Tarjeta</th>
+                <th>Bonificación</th>
+                <th>Gasto ($)</th>
+                <th>Puntos Obtenidos</th>
+                <th>Equivalencia ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <select id="tarjeta" onchange="actualizarBonificacion()">
+                    <option value="CLASICA">Clásica</option>
+                    <option value="ORO">Oro</option>
+                    <option value="PLATINUM">Platinum</option>
+                  </select>
+                </td>
+                <td id="bonificacion">5%</td>
+                <td>
+                  <input
+                    type="number"
+                    id="gasto"
+                    placeholder="Ingrese el monto"
+                    onchange="calcularPuntos()"
+                  />
+                </td>
+                <td id="puntosObtenidos">0</td>
+                <td id="equivalencia">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Versión móvil (tarjetas) -->
+          <div class="mobile-cards">
+            <div class="card-row">
+              <div class="card-item">
+                <span class="card-label">Tarjeta</span>
+                <select
+                  id="tarjeta-mobile"
+                  class="mobile-select"
+                  onchange="actualizarBonificacionMobile()"
+                >
+                  <option value="CLASICA">Clásica</option>
+                  <option value="ORO">Oro</option>
+                  <option value="PLATINUM">Platinum</option>
+                </select>
+              </div>
 
+              <div class="card-item">
+                <span class="card-label">Bonificación</span>
+                <span
+                  id="bonificacion-mobile"
+                  class="card-value bonificacion-mobile"
+                  >5%</span
+                >
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Gasto ($)</span>
+                <input
+                  type="number"
+                  id="gasto-mobile"
+                  class="mobile-input"
+                  placeholder="Ingrese monto"
+                  onchange="calcularPuntosMobile()"
+                />
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Puntos Obtenidos</span>
+                <span
+                  id="puntosObtenidos-mobile"
+                  class="card-value puntos-mobile"
+                  >0</span
+                >
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Equivalencia ($)</span>
+                <span
+                  id="equivalencia-mobile"
+                  class="card-value equivalencia-mobile"
+                  >$0.00</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- promociones -->
         <div class="promociones">
           <div class="promo-card">
             <h3>Promociones</h3>
@@ -277,7 +365,7 @@
           <div class="promo-card">
             <ul>
               <li>
-                <span>6 meses sin interéses en compras mayores a $3,000.</span>
+                <span></span>
               </li>
               <li>
                 <span>Descuento del 20% en tiendas participantes.</span>
@@ -285,7 +373,6 @@
             </ul>
           </div>
         </div>
-
       </section>
 
       <!-- CLASICA  -->
