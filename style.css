@@ -268,10 +268,8 @@
 .iframe-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Espacio entre iframes */
-  justify-content: space-evenly; /* Centrar los iframes */
-  margin: 0 auto;
-  max-width: 1400px; /* Ancho máximo del contenedor */
+  margin-top: 2rem;
+  max-width: 1000px; /* Ancho máximo del contenedor */
 }
 
 .iframe-wrapper {
@@ -1032,115 +1030,175 @@ body {
 /* CSS PARA COSTOS Y COMISIONES */
 .costos-wrapper {
   width: 100%;
-  padding: 20px;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
 .costos-container {
   font-family: sans-serif;
-  max-width: 1200px; /* Máximo ancho para pantallas grandes */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  background-color: #000;
-  color: white;
+  padding: 1.5rem;
+  background: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+ 
+  color:#006a8a;
 }
 
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
-
+/* Estilos de tabla para pantallas grandes */
 .costos-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: clamp(14px, 1.5vw, 16px); /* Tamaño de fuente responsivo */
-}
-
-.costos-table th, 
-.costos-table td {
-  padding: 10px 20px;
-  text-align: left;
-  
+  font-size: 0.95rem;
+  color: white;
 }
 
 .costos-table th {
- 
-  font: 1.7em sans-serif;
-  background-color: #363636;
-}
-
-.costos-notas {
-  font-size: clamp(13px, 1.4vw, 15px);
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Estilos responsivos para el título */
-.costos-container h1 {
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Estilos responsivos para enlaces */
-
-
-/* Estilos responsivos para la tasa de interés */
-
-/* Media queries para ajustes específicos */
-@media (max-width: 768px) {
-  .costos-table th, 
-  .costos-table td {
-    padding: 12px 15px;
-  }
+  background-color: #ffffff;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 1rem;
+  color: #006a8a;
   
-  .costos-container {
-    padding: 20px;
-  }
 }
 
-@media (max-width: 480px) {
+.costos-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: top;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.costos-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Transformación a tabla vertical en móviles */
+@media (max-width: 600px) {
   .costos-table {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
   
-  .costos-table thead,
-  .costos-table tbody,
-  .costos-table tr,
-  .costos-table th,
-  .costos-table td {
-    display: block;
-    width: 100%;
+  .costos-table thead {
+    display: none;
+  }
+  
+  .costos-table tbody {
+    display: flex;
+    flex-direction: column;
   }
   
   .costos-table tr {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #e2e8f0;
   }
   
-  .costos-table th {
-    background-color: transparent;
+  .costos-table tr:last-child {
     border-bottom: none;
-    padding-bottom: 5px;
   }
   
   .costos-table td {
-    padding-top: 5px;
-    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
     border-bottom: none;
+    border-left: 4px solid #4299e1;
   }
   
-  .costos-table td:before {
+  .costos-table td::before {
     content: attr(data-label);
-    font-weight: bold;
-    display: inline-block;
-    width: 45%;
-    color: #333;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
   }
+}
+
+/* Ajustes para pantallas muy pequeñas (menos de 400px) */
+@media (max-width: 400px) {
+  .costos-container {
+    padding: 1rem;
+  }
+  
+  .costos-table td {
+    padding: 0.75rem;
+  }
+  
+  .costos-table td::before {
+    font-size: 0.85rem;
+  }
+  
+  .costos-container h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Efectos hover solo en pantallas grandes */
+@media (hover: hover) and (pointer: fine) {
+  .costos-table tr:hover td {
+    background-color: #f8fafc;
+  }
+}
+.boton-modal {
+  padding: 10px 20px;
+  background-color: #017a92;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+.boton-modal:hover {
+  background-color: #45a049;
+}
+
+/* Estilo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: black;
+}
+
+.contenido-textual {
+  margin-top: 20px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
 }

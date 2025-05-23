@@ -307,21 +307,6 @@
               />
             </a>
           </div>
-
-          <!-- <div class="costos">
-            <div class="costos-linea">
-              <h3>Cat:</h3>
-              <p>84.4% sin IVA</p>
-            </div>
-            <div class="costos-linea">
-              <h3>Tasa de interés:</h3>
-              <p>62.76%</p>
-            </div>
-            <div class="costos-linea">
-              <h3>Comisión por inactividad:</h3>
-              <p>$149 + IVA</p>
-            </div>
-          </div> -->
           <section class="beneficios">
             <div class="beneficios-card">
               <h3>Sin anualidad de por vida</h3>
@@ -334,7 +319,29 @@
             </div>
           </section>
         </section>
-        
+        <!-- Botón para abrir el modal -->
+        <button id="abrirModal" class="boton-modal">¿Como vender la tarjeta?</button>
+
+        <!-- El modal -->
+        <div id="miModal" class="modal">
+          <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <div class="contenido-textual">
+              <p>
+                Según su perfil, el producto que le estaría recomendando es la
+                TDC JOY una tarjeta de credito que aparte de no tener cobro por
+                administración (Anualidad), es la tarjeta más segura, ya que no
+                tiene el CVV impreso en la parte posterior de la tarjeta, además
+                como ventaja exclusiva usted podrá modificar su fecha de corte 1
+                vez al año. Unicamente tendria que gastar 1 peso al mes para
+                evitar la comisión de administración de $149 +IVA para ello, yo
+                lo apoyaré con su solicitud, solamente, me podría confirmar su
+                nombre como aparece en su INE
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div class="iframe-container">
           <div class="iframe-wrapper">
             <iframe
@@ -346,30 +353,18 @@
               allowfullscreen
             ></iframe>
           </div>
-
-          <div class="iframe-wrapper">
-            <iframe
-              class="responsive-iframe"
-              src="https://miro.com/app/embed/uXjVIx_-IFU=/?pres=1&frameId=3458764629368394186&embedId=133024792237"
-              frameborder="0"
-              scrolling="no"
-              allow="fullscreen; clipboard-read; clipboard-write"
-              allowfullscreen
-            ></iframe>
-          </div>
         </div>
+
         <div class="costos-wrapper">
           <div class="costos-container">
-            <h1>Costos y comisiones</h1>
-
             <div class="table-responsive">
               <table class="costos-table">
                 <thead>
                   <tr>
                     <th>CAT PROMEDIO</th>
                     <th>Comisión por Administración</th>
-                    <th>Comisión de penalización por inactividad de</th>
-                    <th>Tasa de interés promedio ponderada anual.</th>
+                    <th>Penalización por inactividad</th>
+                    <th>Tasa de interés anual.</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -382,13 +377,12 @@
                     </td>
                     <td>62.76%</td>
                   </tr>
-                  
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        
+
         <!-- promociones -->
         <div class="promociones">
           <div class="promo-card">

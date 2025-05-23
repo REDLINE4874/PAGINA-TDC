@@ -199,4 +199,25 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     syncCalculations();
   }
+  // Obtener elementos
+  const modal = document.getElementById("miModal");
+  const btn = document.getElementById("abrirModal");
+  const span = document.getElementsByClassName("cerrar")[0];
+
+  // Abrir modal al hacer clic en el botón
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  // Cerrar modal al hacer clic en la X
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Cerrar modal al hacer clic fuera del contenido
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 });
