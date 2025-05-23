@@ -113,7 +113,98 @@
             </div>
           </div>
         </section>
+        <!-- calculadora puntos premia -->
+        <div class="calculadora">
+          <h1>Puntos premia</h1>
+          <table id="puntosTable">
+            <thead>
+              <tr>
+                <th>Tarjeta</th>
+                <th>Bonificación</th>
+                <th>Gasto ($)</th>
+                <th>Puntos Obtenidos</th>
+                <th>Equivalencia ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <select id="tarjeta" onchange="actualizarBonificacion()">
+                    <option value="CLASICA">Clásica</option>
+                    <option value="ORO">Oro</option>
+                    <option value="PLATINUM">Platinum</option>
+                  </select>
+                </td>
+                <td id="bonificacion">5%</td>
+                <td>
+                  <input
+                    type="number"
+                    id="gasto"
+                    placeholder="Ingrese el monto"
+                    onchange="calcularPuntos()"
+                  />
+                </td>
+                <td id="puntosObtenidos">0</td>
+                <td id="equivalencia">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Versión móvil (tarjetas) -->
+          <div class="mobile-cards">
+            <div class="card-row">
+              <div class="card-item">
+                <span class="card-label">Tarjeta</span>
+                <select
+                  id="tarjeta-mobile"
+                  class="mobile-select"
+                  onchange="actualizarBonificacionMobile()"
+                >
+                  <option value="CLASICA">Clásica</option>
+                  <option value="ORO">Oro</option>
+                  <option value="PLATINUM">Platinum</option>
+                </select>
+              </div>
 
+              <div class="card-item">
+                <span class="card-label">Bonificación</span>
+                <span
+                  id="bonificacion-mobile"
+                  class="card-value bonificacion-mobile"
+                  >5%</span
+                >
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Gasto ($)</span>
+                <input
+                  type="number"
+                  id="gasto-mobile"
+                  class="mobile-input"
+                  placeholder="Ingrese monto"
+                  onchange="calcularPuntosMobile()"
+                />
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Puntos Obtenidos</span>
+                <span
+                  id="puntosObtenidos-mobile"
+                  class="card-value puntos-mobile"
+                  >0</span
+                >
+              </div>
+
+              <div class="card-item">
+                <span class="card-label">Equivalencia ($)</span>
+                <span
+                  id="equivalencia-mobile"
+                  class="card-value equivalencia-mobile"
+                  >$0.00</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
         <section class="tdc_aceptadas">
           <div class="validas">
             <h3>Tarjetas validas</h3>
@@ -216,7 +307,8 @@
               />
             </a>
           </div>
-          <div class="costos">
+
+          <!-- <div class="costos">
             <div class="costos-linea">
               <h3>Cat:</h3>
               <p>84.4% sin IVA</p>
@@ -229,7 +321,7 @@
               <h3>Comisión por inactividad:</h3>
               <p>$149 + IVA</p>
             </div>
-          </div>
+          </div> -->
           <section class="beneficios">
             <div class="beneficios-card">
               <h3>Sin anualidad de por vida</h3>
@@ -242,6 +334,7 @@
             </div>
           </section>
         </section>
+        
         <div class="iframe-container">
           <div class="iframe-wrapper">
             <iframe
@@ -265,98 +358,37 @@
             ></iframe>
           </div>
         </div>
-        <!-- calculadora puntos premia -->
-        <div class="calculadora">
-          <h1>Calculadora de Puntos de Tarjeta</h1>
-          <table id="puntosTable">
-            <thead>
-              <tr>
-                <th>Tarjeta</th>
-                <th>Bonificación</th>
-                <th>Gasto ($)</th>
-                <th>Puntos Obtenidos</th>
-                <th>Equivalencia ($)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <select id="tarjeta" onchange="actualizarBonificacion()">
-                    <option value="CLASICA">Clásica</option>
-                    <option value="ORO">Oro</option>
-                    <option value="PLATINUM">Platinum</option>
-                  </select>
-                </td>
-                <td id="bonificacion">5%</td>
-                <td>
-                  <input
-                    type="number"
-                    id="gasto"
-                    placeholder="Ingrese el monto"
-                    onchange="calcularPuntos()"
-                  />
-                </td>
-                <td id="puntosObtenidos">0</td>
-                <td id="equivalencia">$0.00</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Versión móvil (tarjetas) -->
-          <div class="mobile-cards">
-            <div class="card-row">
-              <div class="card-item">
-                <span class="card-label">Tarjeta</span>
-                <select
-                  id="tarjeta-mobile"
-                  class="mobile-select"
-                  onchange="actualizarBonificacionMobile()"
-                >
-                  <option value="CLASICA">Clásica</option>
-                  <option value="ORO">Oro</option>
-                  <option value="PLATINUM">Platinum</option>
-                </select>
-              </div>
+        <div class="costos-wrapper">
+          <div class="costos-container">
+            <h1>Costos y comisiones</h1>
 
-              <div class="card-item">
-                <span class="card-label">Bonificación</span>
-                <span
-                  id="bonificacion-mobile"
-                  class="card-value bonificacion-mobile"
-                  >5%</span
-                >
-              </div>
-
-              <div class="card-item">
-                <span class="card-label">Gasto ($)</span>
-                <input
-                  type="number"
-                  id="gasto-mobile"
-                  class="mobile-input"
-                  placeholder="Ingrese monto"
-                  onchange="calcularPuntosMobile()"
-                />
-              </div>
-
-              <div class="card-item">
-                <span class="card-label">Puntos Obtenidos</span>
-                <span
-                  id="puntosObtenidos-mobile"
-                  class="card-value puntos-mobile"
-                  >0</span
-                >
-              </div>
-
-              <div class="card-item">
-                <span class="card-label">Equivalencia ($)</span>
-                <span
-                  id="equivalencia-mobile"
-                  class="card-value equivalencia-mobile"
-                  >$0.00</span
-                >
-              </div>
+            <div class="table-responsive">
+              <table class="costos-table">
+                <thead>
+                  <tr>
+                    <th>CAT PROMEDIO</th>
+                    <th>Comisión por Administración</th>
+                    <th>Comisión de penalización por inactividad de</th>
+                    <th>Tasa de interés promedio ponderada anual.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>84.4% Sin IVA*</td>
+                    <td>Administración $0</td>
+                    <td>
+                      $149.00 Sin IVA al mes Exéntala al realizar compras por
+                      $1.00 al mes.
+                    </td>
+                    <td>62.76%</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
+        
         <!-- promociones -->
         <div class="promociones">
           <div class="promo-card">

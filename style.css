@@ -11,7 +11,7 @@
   justify-content: left;
   align-items: center;
   background-color: #fff;
-  padding: 15px 3%;
+  padding: 12px 3%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   /* Hace que la barra se quede fija */
@@ -160,6 +160,7 @@
   margin-bottom: 3rem;
   align-items: center;
   border-radius: var(--radius-md);
+  justify-content:space-around;
 }
 
 /* Tarjeta simplificada con mejores prácticas */
@@ -169,7 +170,7 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   padding: 3rem;
-  margin: 0 auto;
+
 }
 
 .card img {
@@ -414,8 +415,8 @@
 }
 /* ESTILOS GENERALES */
 :root {
-  --primary-color: #4361ee;
-  --primary-dark: #3a0ca3;
+  --primary-color: #259ac1;
+  --primary-dark: #006a8a;
   --secondary-color: #4cc9f0;
   --success-color: #2b9348;
   --danger-color: #ef233c;
@@ -427,15 +428,15 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: #333;
 }
 
 .calculadora {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 2rem auto;
-  padding: 2.5rem;
+  padding: 2rem;
   background: #ffffff;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -456,7 +457,7 @@ body {
 }
 
 .calculadora h1::after {
-  content: '';
+  content: "";
   display: block;
   width: 100px;
   height: 5px;
@@ -486,7 +487,11 @@ body {
 }
 
 #puntosTable thead {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
   color: white;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -519,7 +524,8 @@ body {
 }
 
 /* Elementos del formulario */
-#tarjeta, #gasto {
+#tarjeta,
+#gasto {
   width: 100%;
   padding: 0.85rem 1.2rem;
   border: 1px solid #e0e0e0;
@@ -538,7 +544,8 @@ body {
   cursor: pointer;
 }
 
-#tarjeta:focus, #gasto:focus {
+#tarjeta:focus,
+#gasto:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
@@ -554,6 +561,7 @@ body {
 #bonificacion {
   font-weight: 700;
   color: var(--danger-color);
+  
 }
 
 #puntosObtenidos {
@@ -573,16 +581,16 @@ body {
     margin: 1rem;
     border-radius: 14px;
   }
-  
+
   #puntosTable {
     display: none;
   }
-  
+
   .mobile-cards {
     display: block;
     margin-top: 1rem;
   }
-  
+
   .card-row {
     background: white;
     border-radius: var(--border-radius);
@@ -592,42 +600,45 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
   }
-  
+
   .card-row:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   .card-item {
-    display: flex;
-    justify-content: space-between;
+    
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
   }
-  
+
   .card-item:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
   }
-  
+
   .card-label {
     font-weight: 600;
     color: #555;
     font-size: 0.95rem;
     flex: 1;
+    padding-right: 1rem;
+    
   }
-  
+
   .card-value {
     font-weight: 500;
     text-align: right;
     flex: 1;
   }
-  
+
   /* Elementos del formulario en móvil */
-  .mobile-select, .mobile-input {
+  .mobile-select,
+  .mobile-input {
     width: 100%;
     padding: 0.9rem;
     border: 1px solid #e0e0e0;
@@ -636,7 +647,7 @@ body {
     transition: var(--transition);
     background-color: #f9f9f9;
   }
-  
+
   .mobile-select {
     appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -644,36 +655,37 @@ body {
     background-position: right 0.75rem center;
     background-size: 1rem;
   }
-  
-  .mobile-select:focus, .mobile-input:focus {
+
+  .mobile-select:focus,
+  .mobile-input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
     background-color: white;
   }
-  
+
   /* Colores específicos para móvil */
   .bonificacion-mobile {
     color: var(--danger-color);
     font-weight: 600;
   }
-  
+
   .puntos-mobile {
     color: var(--success-color);
     font-weight: 600;
   }
-  
+
   .equivalencia-mobile {
     color: var(--primary-color);
     font-weight: 600;
   }
-  
+
   /* Ajustes para el título en móvil */
   .calculadora h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .calculadora h1::after {
     width: 80px;
     height: 4px;
@@ -683,8 +695,14 @@ body {
 
 /* ANIMACIONES */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .calculadora {
@@ -827,10 +845,9 @@ body {
 
 /* Estilos base del carrusel */
 .carousel-container {
-  max-width: 1500px;
-  margin: 3rem auto;
+  max-width: 1200px;
+  margin: 1rem auto;
   padding: 0 1rem;
-  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
 .carousel {
@@ -938,7 +955,6 @@ body {
   animation-delay: 16s;
 }
 
-
 /* Responsive */
 @media (max-width: 768px) {
   .carousel {
@@ -967,9 +983,10 @@ body {
 .tdc_aceptadas {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-  margin-left: 3rem;
+  margin-top: 3rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem ;
 }
 
 .validas {
@@ -1010,5 +1027,120 @@ body {
   .validas,
   .no-validas {
     width: 300px !important;
+  }
+}
+/* CSS PARA COSTOS Y COMISIONES */
+.costos-wrapper {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.costos-container {
+  font-family: sans-serif;
+  max-width: 1200px; /* Máximo ancho para pantallas grandes */
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #000;
+  color: white;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.costos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(14px, 1.5vw, 16px); /* Tamaño de fuente responsivo */
+}
+
+.costos-table th, 
+.costos-table td {
+  padding: 10px 20px;
+  text-align: left;
+  
+}
+
+.costos-table th {
+ 
+  font: 1.7em sans-serif;
+  background-color: #363636;
+}
+
+.costos-notas {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Estilos responsivos para el título */
+.costos-container h1 {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos responsivos para enlaces */
+
+
+/* Estilos responsivos para la tasa de interés */
+
+/* Media queries para ajustes específicos */
+@media (max-width: 768px) {
+  .costos-table th, 
+  .costos-table td {
+    padding: 12px 15px;
+  }
+  
+  .costos-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .costos-table {
+    display: block;
+  }
+  
+  .costos-table thead,
+  .costos-table tbody,
+  .costos-table tr,
+  .costos-table th,
+  .costos-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .costos-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .costos-table th {
+    background-color: transparent;
+    border-bottom: none;
+    padding-bottom: 5px;
+  }
+  
+  .costos-table td {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: none;
+  }
+  
+  .costos-table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 45%;
+    color: #333;
   }
 }
