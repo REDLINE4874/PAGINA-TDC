@@ -160,24 +160,22 @@
 /* Contenedor principal más espacioso y centrado */
 .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  justify-content:space-around;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
   
+  margin-bottom: 1rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* Card con sombra suave y elevación al hover */
 .card {
-  flex: 1 1 350px;
   max-width: 480px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  padding: 2.5rem 2rem 0rem;
-  display: flex;
+  padding: 1rem 1rem 0rem;
   flex-direction: column;
   align-items: center;
   transition: var(--transition);
@@ -191,8 +189,8 @@
 
 /* Imagen con borde redondeado y sombra sutil */
 .card img {
-  width: 100%;
-  max-height: 280px;
+  width: 70%;
+  max-height: auto;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
@@ -234,24 +232,28 @@
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
-  .card {
-    padding: 2rem 1.5rem 2.5rem;
-  }
+@media (max-width: 500px) {
+  
   .beneficios {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 }
-
+@media (max-width: 875px) {
+  .contenedor {
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 480px) {
   .contenedor {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    
+   
   }
   .card {
     max-width: 100%;
-    padding: 1.8rem 1.2rem 2rem;
+    height: auto;
+   display: flex;
   }
   .beneficios {
     grid-template-columns: 1fr;
@@ -269,14 +271,13 @@
 }
 .iframe-container {
   display: flex;
-  margin-top: 1rem;
   max-width: 100%; /* Ancho máximo del contenedor */
-  padding: 0rem 5rem 2rem 5rem; 
+ padding: 0rem 4rem 0rem 4rem;
 }
 
 .iframe-wrapper {
   flex: 1 1 calc(50% - 23px); /* 50% del ancho menos el gap */
-  min-width: 300px; /* Ancho mínimo antes de apilar */
+  text-align: center;
 }
 
 .responsive-iframe {
@@ -798,7 +799,7 @@ footer {
 }
 
 /* Responsividad para la navbar */
-@media (max-width: 992px) {
+@media (max-width: 700px) {
   .navbar {
     flex-wrap: wrap;
     padding: 10px 4%;
