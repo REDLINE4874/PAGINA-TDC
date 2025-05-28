@@ -1137,7 +1137,7 @@ footer {
 
 /* Modal contenido */
 .modal-content {
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 8% auto;
   padding: 25px 30px;
   border-radius: 12px;
@@ -1181,14 +1181,14 @@ footer {
 
 /* Botones generales */
 button.boton-modal {
-  background: #007bff;
+  background: #009bca;
   color: #fff;
   border: none;
   border-radius: 6px;
   padding: 12px 22px;
   font-size: 16px;
   font-weight: 600;
-  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+  box-shadow: 0 4px 8px #aeaeae;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   user-select: none;
@@ -1196,8 +1196,8 @@ button.boton-modal {
 
 button.boton-modal:hover,
 button.boton-modal:focus {
-  background-color: #0056b3;
-  box-shadow: 0 6px 12px rgba(0,86,179,0.5);
+  background-color: #008c9f;
+  box-shadow: 0 6px 12px #008c9f;
   outline: none;
 }
 
