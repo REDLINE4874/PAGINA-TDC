@@ -1,0 +1,14 @@
+{
+  "joy": {
+    "titulo": "Tarjeta Joy",
+    "contenido": "<p>gola</p>"
+  },
+  "teleton": {
+    "titulo": "Tarjeta Teletón",
+    "contenido": "<p>Para apoyar a la fundación Teletón:</p><ul><li>Banamex dona $50 por apertura</li><li>Sin costo el primer año</li><li>Beneficios en comercios</li></ul>"
+  },
+  "clasica": {
+    "titulo": "Tarjeta Clásica",
+    "contenido": "<p>Buena para historial crediticio:</p><ul><li>Amplia aceptación</li><li>Ideal para nuevos usuarios</li><li>Sin complicaciones</li></ul>"
+  }
+}
