@@ -1197,7 +1197,7 @@ button.boton-modal {
 button.boton-modal:hover,
 button.boton-modal:focus {
   background-color: #008c9f;
-  box-shadow: 0 6px 12px #2c3031;
+  box-shadow: 0 6px 12px #acacac;
   outline: none;
 }
 
