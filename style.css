@@ -162,7 +162,7 @@
   
   margin-bottom: 1rem;
   padding: .5rem;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0rem 0rem;
   align-content: center;
   align-items: center;
   justify-content: flex-start;
@@ -172,18 +172,18 @@
 .card {
   max-width: 480px;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
   overflow: hidden;
   padding: 1rem 1rem 0rem;
   flex-direction: column;
   align-items: center;
-  transition: var(--transition);
+  
   cursor: default;
 }
 
-.card:hover {
+.card img:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-8px);
+  transition: var(--transition);
 }
 
 /* Imagen con borde redondeado y sombra sutil */
