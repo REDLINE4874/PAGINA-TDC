@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   /***************************************/
-  /* 1. CÓDIGO DEL MENÚ HAMBURGUESA */
+  /* 1. MENÚ HAMBURGUESA */
   /***************************************/
   const menuToggle = document.createElement("div");
   menuToggle.className = "menu-toggle";
   menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-  document.querySelector(".navbar").prepend(menuToggle);
+  document.querySelector(".navbar")?.prepend(menuToggle);
 
   menuToggle.addEventListener("click", function () {
     const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("active");
+    navLinks?.classList.toggle("active");
   });
 
   // Navegación entre secciones
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         targetSection.classList.add("activa");
 
         if (window.innerWidth <= 992) {
-          document.querySelector(".nav-links").classList.remove("active");
+          document.querySelector(".nav-links")?.classList.remove("active");
         }
 
         window.scrollTo({
@@ -39,22 +39,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /***************************************/
-  /* 2. CÓDIGO DE LA CALCULADORA DE PUNTOS */
+  /* 2. CALCULADORA DE PUNTOS */
   /***************************************/
+  const bonificaciones = {
+    CLASICA: "5%",
+    ORO: "7%",
+    PLATINUM: "10%",
+  };
 
-  // Funciones para versión escritorio
+  const porcentajes = {
+    CLASICA: 0.05,
+    ORO: 0.07,
+    PLATINUM: 0.1,
+  };
+
   function actualizarBonificacion() {
     const tarjeta = document.getElementById("tarjeta")?.value;
     if (!tarjeta) return;
 
-    const bonificaciones = {
-      CLASICA: "5%",
-      ORO: "7%",
-      PLATINUM: "10%",
-    };
-
-    const bonificacion = bonificaciones[tarjeta] || "0%";
-    document.getElementById("bonificacion").textContent = bonificacion;
+    document.getElementById("bonificacion").textContent =
+      bonificaciones[tarjeta] || "0%";
     calcularPuntos();
   }
 
@@ -62,44 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const tarjeta = document.getElementById("tarjeta")?.value;
     const gasto = parseFloat(document.getElementById("gasto")?.value) || 0;
 
-    const porcentajes = {
-      CLASICA: 0.05,
-      ORO: 0.07,
-      PLATINUM: 0.1,
-    };
-
     const porcentaje = porcentajes[tarjeta] || 0;
     const puntos = Math.round(gasto * porcentaje);
     const equivalencia = puntos * 0.1;
 
-    if (document.getElementById("puntosObtenidos")) {
-      document.getElementById("puntosObtenidos").textContent = puntos;
-    }
-    if (document.getElementById("equivalencia")) {
-      document.getElementById(
-        "equivalencia"
-      ).textContent = `$${equivalencia.toFixed(2)}`;
-    }
+    document.getElementById("puntosObtenidos").textContent = puntos;
+    document.getElementById(
+      "equivalencia"
+    ).textContent = `$${equivalencia.toFixed(2)}`;
 
-    // Sincronizar con versión móvil si existe
-    if (window.innerWidth <= 768) {
-      actualizarBonificacionMobile();
-    }
+    if (window.innerWidth <= 768) actualizarBonificacionMobile();
   }
 
-  // Funciones para versión móvil
   function actualizarBonificacionMobile() {
     const tarjeta = document.getElementById("tarjeta-mobile")?.value;
     if (!tarjeta) return;
 
-    const bonificaciones = {
-      CLASICA: "5%",
-      ORO: "7%",
-      PLATINUM: "10%",
-    };
-
-    const bonificacion = bonificaciones[tarjeta] || "0%";
-    document.getElementById("bonificacion-mobile").textContent = bonificacion;
+    document.getElementById("bonificacion-mobile").textContent =
+      bonificaciones[tarjeta] || "0%";
     calcularPuntosMobile();
   }
 
@@ -108,32 +92,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const gasto =
       parseFloat(document.getElementById("gasto-mobile")?.value) || 0;
 
-    const porcentajes = {
-      CLASICA: 0.05,
-      ORO: 0.07,
-      PLATINUM: 0.1,
-    };
-
     const porcentaje = porcentajes[tarjeta] || 0;
     const puntos = Math.round(gasto * porcentaje);
     const equivalencia = puntos * 0.1;
 
-    if (document.getElementById("puntosObtenidos-mobile")) {
-      document.getElementById("puntosObtenidos-mobile").textContent = puntos;
-    }
-    if (document.getElementById("equivalencia-mobile")) {
-      document.getElementById(
-        "equivalencia-mobile"
-      ).textContent = `$${equivalencia.toFixed(2)}`;
-    }
+    document.getElementById("puntosObtenidos-mobile").textContent = puntos;
+    document.getElementById(
+      "equivalencia-mobile"
+    ).textContent = `$${equivalencia.toFixed(2)}`;
 
-    // Sincronizar con versión escritorio si existe
-    if (window.innerWidth > 768) {
-      actualizarBonificacion();
-    }
+    if (window.innerWidth > 768) actualizarBonificacion();
   }
 
-  // Sincronización entre versiones
   function syncCalculations() {
     const tarjetaValue =
       window.innerWidth <= 768
@@ -152,72 +122,87 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /***************************************/
-  /* INICIALIZACIÓN DE EVENTOS */
+  /* 3. INICIALIZACIÓN DE EVENTOS */
   /***************************************/
+  const tarjeta = document.getElementById("tarjeta");
+  const gasto = document.getElementById("gasto");
+  const tarjetaMobile = document.getElementById("tarjeta-mobile");
+  const gastoMobile = document.getElementById("gasto-mobile");
 
-  // Eventos para versión escritorio
-  if (document.getElementById("tarjeta")) {
-    document.getElementById("tarjeta").addEventListener("change", function () {
-      actualizarBonificacion();
-      syncCalculations();
-    });
-  }
+  tarjeta?.addEventListener("change", () => {
+    actualizarBonificacion();
+    syncCalculations();
+  });
 
-  if (document.getElementById("gasto")) {
-    document.getElementById("gasto").addEventListener("input", function () {
-      calcularPuntos();
-      syncCalculations();
-    });
-  }
+  gasto?.addEventListener("input", () => {
+    calcularPuntos();
+    syncCalculations();
+  });
 
-  // Eventos para versión móvil
-  if (document.getElementById("tarjeta-mobile")) {
-    document
-      .getElementById("tarjeta-mobile")
-      .addEventListener("change", function () {
-        actualizarBonificacionMobile();
-        syncCalculations();
-      });
-  }
+  tarjetaMobile?.addEventListener("change", () => {
+    actualizarBonificacionMobile();
+    syncCalculations();
+  });
 
-  if (document.getElementById("gasto-mobile")) {
-    document
-      .getElementById("gasto-mobile")
-      .addEventListener("input", function () {
-        calcularPuntosMobile();
-        syncCalculations();
-      });
-  }
+  gastoMobile?.addEventListener("input", () => {
+    calcularPuntosMobile();
+    syncCalculations();
+  });
 
-  // Sincronizar al cambiar tamaño de pantalla
   window.addEventListener("resize", syncCalculations);
 
-  // Inicializar calculadora
-  if (
-    document.getElementById("tarjeta") ||
-    document.getElementById("tarjeta-mobile")
-  ) {
+  if (tarjeta || tarjetaMobile) {
     syncCalculations();
   }
-  // Obtener elementos
-  const modal = document.getElementById("miModal");
-  const btn = document.getElementById("abrirModal");
-  const span = document.getElementsByClassName("cerrar")[0];
 
-  // Abrir modal al hacer clic en el botón
-  btn.onclick = function () {
-    modal.style.display = "block";
-  };
+  /***************************************/
+  /* 4. MODALES */
+  /***************************************/
+  const modalContainer = document.getElementById("modalContainer");
+  const modalTitulo = document.getElementById("modalTitulo");
+  const modalContent = document.getElementById("modalContent");
+  const cerrarBtn = document.querySelector(".cerrar");
 
-  // Cerrar modal al hacer clic en la X
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
+  let modalContents = {};
 
-  // Cerrar modal al hacer clic fuera del contenido
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  fetch("modales.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar modales.json");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      modalContents = data;
+
+      document.querySelectorAll(".boton-modal").forEach((button) => {
+        button.addEventListener("click", function () {
+          const modalType = this.dataset.modal;
+          const modalData = modalContents[modalType];
+
+          if (modalData && modalContent && modalTitulo && modalContainer) {
+            modalTitulo.textContent = modalData.titulo;
+            modalContent.innerHTML = modalData.contenido;
+            modalContainer.style.display = "block";
+          } else {
+            modalTitulo.textContent = "";
+            modalContent.innerHTML = "<p>Contenido no disponible.</p>";
+            modalContainer.style.display = "block";
+          }
+        });
+      });
+    })
+    .catch((error) => {
+      console.error("Error al cargar modales.json:", error);
+    });
+
+  cerrarBtn.addEventListener("click", () => {
+    modalContainer.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modalContainer) {
+      modalContainer.style.display = "none";
     }
-  };
+  });
 });
